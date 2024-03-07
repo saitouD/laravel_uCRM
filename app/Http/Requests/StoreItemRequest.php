@@ -26,7 +26,7 @@ class StoreItemRequest extends FormRequest
         return [
             'name' => ['required', 'max:50'],
             'memo' => ['required', 'max:255'],
-            'price' => ['required', 'max:numeric'],//numeric 数値しか入れられなくする
+            'price' => ['required', 'numeric']//numeric 数値しか入れられなくする
 
         ];
     }

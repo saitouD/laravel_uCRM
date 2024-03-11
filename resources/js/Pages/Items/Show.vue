@@ -83,3 +83,4 @@ const deleteItem = id => { //idについて、このidは下のdeleteConfirmの�
         </div>
     </AuthenticatedLayout>
 </template>
+../../common

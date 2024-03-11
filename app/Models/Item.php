@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Purchase;
 
 class Item extends Model
 {
@@ -15,5 +16,12 @@ class Item extends Model
         'price',
         'is_selling'
     ];
+
+    public function purchases()
+    {
+        return $this->belongsToMany(Purchase::Class)//purchaseテーブルと多対多のリレーションであることを定義
+        //同時に中間テーブルがItemとPurchaseをアルファベット順に並べた名前だと勝手に認識してくれる
+        ->withPivot('quantity');
+    }
 
 }

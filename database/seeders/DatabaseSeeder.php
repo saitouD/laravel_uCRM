@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         $items = \App\Models\Item::all(); //商品テーブルの情報をget
 
-        Purchase::factory(1000)->create()
+        Purchase::factory(10000)->create()
         ->each(function(Purchase $purchase) use ($items) { //each関数：1件ずつ処理,　use:関数の外側で定義してる$itemsを使えるようにする。
             $purchase->items()->attach( //attach(purchaseテーブルにデータが登録されたタイミングで中間テーブルitem_purchaseにも同時に登録したいので入れてる)
                 //↑のitems関数はPurchase.phpで定義したもの。
